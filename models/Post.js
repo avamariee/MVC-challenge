@@ -1,6 +1,5 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 
 class Post extends Model {
 
@@ -13,10 +12,17 @@ Post.init({
         autoIncrement: true,
         primaryKey: true
     },
+
     title: {
         type: DataTypes.STRING,
         allowNull: false
     },
+    
+    body: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
     post_url: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -24,6 +30,7 @@ Post.init({
             isUrl: true
         }
     },
+
     user_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -32,11 +39,11 @@ Post.init({
         }
     }
 },
-{
-    sequelize,
-    underscored: true,
-    freezeTableName: true,
-    modelName: 'post'
-})
+    {
+        sequelize,
+        underscored: true,
+        freezeTableName: true,
+        modelName: 'post'
+    });
 
 module.exports = Post;
