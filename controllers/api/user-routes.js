@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET request for localhost:3001/api/users
@@ -31,6 +31,14 @@ router.get('/:id', (req, res) => {
                 model: Post,
                 attributes: ['id', 'title', 'body', 'post_url', 'created_at']
             },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'created_at'],
+                include: {
+                    model: Post,
+                    attributes: ['title']
+                }
+            }
         ]
     })
         .then(dbUserData => {

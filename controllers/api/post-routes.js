@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET request for localhost:3001/api/posts
@@ -15,7 +15,15 @@ router.get('/', (req, res) => {
         ],
         order: [['created_at', 'DESC']],
         include: [
-            // eventually add in 'comment' model when created
+            // add comment model
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
 
             {
                 // include the User model so it can pull the user data
@@ -46,6 +54,14 @@ router.get('/:id', (req, res) => {
         ],
         include: [
             // include comment model when created
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
 
             {
                 model: User,
@@ -117,17 +133,17 @@ router.delete('/:id', withAuth, (req, res) => {
             id: req.params.id
         }
     })
-    .then(dbPostData=> {
-        if(!dbPostData){
-            res.status(400).json({ message: 'No post found with this ID.' });
-            return;
-        }
-        res.json(dbPostData);
-    })
-    .catch(err => {
-        console.log('There was an error!' + err);
-        res.status(500).json(err);
-    })
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(400).json({ message: 'No post found with this ID.' });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log('There was an error!' + err);
+            res.status(500).json(err);
+        })
 
 })
 

@@ -1,4 +1,4 @@
-const { Comment, User } = require('../../models');
+const { Comment, User, Post } = require('../../models');
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 
