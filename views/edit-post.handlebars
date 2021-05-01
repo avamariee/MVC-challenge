@@ -8,6 +8,9 @@
             <input name="post-title" type="text" value="{{post.title}}" />
             <span>({{format_url post.post_url}})</span>
         </div>
+         <div>
+            <input name="post-body" type="text" value="{{post.body}}" />
+        </div>
         <div>
             By you on {{format_date post.created_at}}
             |
@@ -20,4 +23,4 @@
 
 
 <script src="/javascript/edit-post.js"></script>
-
+<script src="/javascript/delete-post.js"></script>
