@@ -5,7 +5,7 @@ https://github.com/avamariee/MVC-challenge
 
 ## Screenshot
 
-![Screenshot of the Application](/screenshot.jpg)
+![Screenshot of the Application](/screenshot.JPG)
 
 ## Technologies Used
 > Node.js, Sequelize, Nodemon, Bootstrap, Handlebars, and Express-session.
