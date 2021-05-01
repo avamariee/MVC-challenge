@@ -28,17 +28,24 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(dbPostData => {
-        // pass post object onto the homepage
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        console.log(dbPostData[0])
+        .then(dbPostData => {
+            // pass post object onto the homepage
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            console.log(dbPostData[0])
 
-        res.render('homepage', {posts});
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+            res.render('homepage', { posts });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
+
+router.get('/login', (req, res) => {
+
+
+    res.render('login');
+});
+
 
 module.exports = router;
