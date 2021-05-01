@@ -26,6 +26,7 @@ async function signupFormHandler(event) {
         // check the response status
         if (response.ok) {
             console.log('User created.');
+            document.location.replace('/dashboard')
         } else {
             alert('You need to fill out all the required fields!' + response.statusText);
         }
