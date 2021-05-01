@@ -1,3 +1,72 @@
-* {
-    background-color: aquamarine;
+*, body {
+    background-color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    color:white;
 }
+
+
+
+a {
+    text-decoration: none;
+    color: rgb(0, 255, 21)
+}
+a:hover {
+    color: red;
+}
+
+.nav-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 150%;
+    min-height: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    color: white;
+}
+
+.fav {
+    color: rgb(0, 255, 21);
+    font-family: 'Great Vibes', cursive;
+}
+
+
+.title {
+    align-content: center;
+}
+
+.title:hover, .dashboard:hover {
+    text-decoration: underline;
+    max-width: fit-content;
+}
+
+.login, .logout {
+
+    max-width: 120px;
+    padding: 0.4em 2em;
+    margin-bottom: 20px;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight:bolder;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 255, 21);
+    text-shadow: 0 0.04em 0.04em rgba(3, 3, 3, 0.2);
+    text-align: center;
+}
+
+.login:hover, .logout:hover {
+    border-color: white;
+}
+
+.post-list {
+    color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    height: 100px;
+  }
