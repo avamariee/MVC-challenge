@@ -16,17 +16,6 @@
 
 <body>
 
-
-
-
-
-
-
-
-
-
-
-
     <header>
         <a href='/'>
             <h1 class="title">
@@ -40,11 +29,18 @@
 
     <ul class="nav justify-content-center">
 
+        {{#if loggedIn}}
         <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/dashboard">
-                {{#if loggedIn}}
                 <h2 class="dashboard">
                     Dashboard
+                </h2>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">
+                <h2 class="dashboard">
+                    Home
                 </h2>
             </a>
         </li>
