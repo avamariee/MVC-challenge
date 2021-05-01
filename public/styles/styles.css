@@ -20,7 +20,6 @@ a:hover {
     width: 150%;
     min-height: 100%;
     max-width: 1600px;
-    margin: 0 auto;
     color: white;
 }
 
@@ -29,11 +28,9 @@ a:hover {
     font-family: 'Great Vibes', cursive;
 }
 
-
 .title {
-    align-content: center;
+    margin-left: 10px;
 }
-
 .title:hover, .dashboard:hover {
     text-decoration: underline;
     max-width: fit-content;
@@ -41,8 +38,8 @@ a:hover {
 
 .login, .logout {
 
-    max-width: 120px;
-    padding: 0.4em 2em;
+    max-width: 200px;
+    padding: 0.6em 2em;
     margin-bottom: 20px;
     border: 0.16em solid rgba(255, 255, 255, 0);
     border-radius: 2em;
@@ -60,13 +57,23 @@ a:hover {
     border-color: white;
 }
 
-.post-list {
-    color: white;
+.post {
+    padding-top: 10px;
+}
+.post-text, .post-user {
+    padding: 10px;
+}
+
+.post-user {
+    border-bottom: 2px solid white;
+    max-width: fit-content;
+    font-weight: bolder;
 }
 
 footer {
     position: absolute;
+    justify-content: center;
     bottom: 0;
-    width: 80%;
+    width: 100%;
     height: 100px;
   }

@@ -1,12 +1,17 @@
-<ol class="post-list">
+<ol>
   {{#each posts as |post|}}
   <li>
-    <article class="post">
-      <div class="title">
+    <article>
+      <div class="post">
         <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
         <span>({{post.post_url}})</span>
       </div>
-      <div class="meta">
+      <div class="post-text">
+
+        {{post.body}}
+
+      </div>
+      <div class="post-user">
        By {{post.user.username}} on
         {{post.created_at}}
         |
